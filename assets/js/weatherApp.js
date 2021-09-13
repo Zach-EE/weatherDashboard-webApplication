@@ -12,7 +12,7 @@ const weatherIconEl = document.querySelector('#icon');
 const uvIndexEl = document.querySelector('#uvIndex');
 // OPEN WEATHER API-KEY:
 const API_KEY = 'cc1fceed251df796bcf2e58da0d4a719';
-// const API_KEY = 'cce801f5223df23bb3369079c0a9d97e';
+
 const existingEntries = JSON.parse(localStorage.getItem('cities'));
 const topCities = [
     'Charleston',
