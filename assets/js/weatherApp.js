@@ -178,7 +178,7 @@ const displayCurrentWeather = (weatherData) => {
     // Update City name in weather element
     cardTitleEl.textContent = `${weatherData.name}: `
     // Shows icon of current weather with description
-    weatherIconEl.setAttribute('src', `https//openweathermap.org/data/2.5/img/wn/${weatherData.weather[0].icon}@2x.png`);
+    weatherIconEl.setAttribute('src', `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`);
     weatherIconEl.setAttribute("alt", weatherData.weather[0].description);
     cardTitleEl.append(weatherIconEl);
 
