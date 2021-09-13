@@ -1,43 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Link to Font Awesome -->
+    <script src="https://kit.fontawesome.com/a5e30c8ab6.js" crossorigin="anonymous"></script>
+    <!-- Link to Stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css"/>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <script defer src="./assets/js/script.js"></script>
-
-  <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Weather Dashboard WebApp</title>
-</head>
-<body>
-    <!-- Application Page Header -->
-    <header class="jumbotoron jubotron-fluid bg-dark text-ligt py-4 mb-0 sticky-top flex-md-nowrap">
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+        <!-- Header Section -->
+    <div class="jumbotron jumbotron-fluid bg-dark text-light py-4 mb-0 sticky-top flex-md-nowrap">
         <div class="container text-center">
-            <h1 class="display-5 mb-0">Weather Dashboard</h1>
-            <p class="lead text-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non et adipisci ullam exercitationem fugiat, velit, cupiditate, magnam ut facilis minima at beatae. Repudiandae, necessitatibus aliquam.</p>
+        <h1 class="display-5 mb-0">Weather Dashboard</h1>
+        <p class="lead text-info">Something Something Weather Dashboard</p>
         </div>
-    </header>
-    <!-- Main Application -->
-    <div class="container-fluid">
+    </div>
+
+    <main class="container-fluid">
         <div class="row">
-            <!-- Side Search Bar -->
-            <div class="sidebar-sticky col-sm-4 col-md-3 bg-light pt-3">
-                <label for="citySearch" class="font-weight-bold" id="citySearchLabel">Find Your City: </label>
-                <form action="" class="searchForm">
+            <!-- Side Bar Section -->
+            <sidebar class="sidebar-sticky col-sm-4 col-md-3 bg-light pt-3">
+                <label for="inputCity" placeholder="" class="font-weight-bold">Search for a City:</label>
+                <form id="citySearchForm">
                     <div class="form-group">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="searchInput" placeholder="Charleston">
-                            <button class="btn btn-primary" type="button" id="citySearch"><i class="fa fa-search"></i></button>
+                            <input type="text" class="form-control" placeholder="City Search..." id="inputCity">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="citySearch"><i class="fa fa-search"></i></button>
+                            </div>
                         </div>
                     </div>
                 </form>
-            </div>
+                <!-- TODO: ADD SECTION FOR USER SEARCHES -->
+                <p class="font-weight-bold text-primary mt-3 mb-1">Popular Cities:</p>
+                <div class="list-group-1"></div>
+                <p class="font-weight-bold text-primary mt-3 mb-1">Previous Cities:</p>
+                <div class="list-group-2"></div>
+            </sidebar>
+
+            <!-- Location Weather Data Content -->
+            <content class="col-sm-8 col-md-9">
+                <div id="weatherContent" class="pt-3">
+                    <div class="card w-100">
+                        <div class="card-body py-2">
+                            <h3 class="card-title font-weight-bold mb-0"><img id="icon" alt="Weather Icon" /></h3>
+                            <div class="card-text mt-0">
+                                <p>Temperature: <span id="temp"></span></p>
+                                <p>Humidity: <span id="humidity"></span></p>
+                                <p>UV Index: <span id="uvIndex"></span></p>
+                                <p>Wind Speed: <span id="windSpeed"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 Day Forecast Section -->
+                    <section class="container-fluid" id="forecastSection">
+                        <h3 class="font-weight-bold my-4">5-Day Forecast</h3>
+                      <!-- Forecast 1 -->
+                      <div class="col-20">
+                        <div class="forecast-container bg-primary text-white mb-4">
+                        <h5 class="date-title font-weight-bold"></h5>
+                        <img id="forecastIcon" alt="Weather Forecast Icon">
+                        <p class="font-weight-bold">Temperature: <span id="tempForecast" class="font-weight-normal"></span></p>
+                        <p class="font-weight-bold">Humidity: <span id="humidityForecast" class="font-weight-normal"></span></p>
+                        </div>
+                    </div>
+                      <!-- Forecast 2 -->
+                      <div class="col-20">
+                        <div class="forecast-container bg-primary text-white mb-4">
+                        <h5 class="date-title font-weight-bold"></h5>
+                        <img id="forecastIcon" alt="Weather Forecast Icon">
+                        <p class="font-weight-bold">Temperature: <span id="tempForecast" class="font-weight-normal"></span></p>
+                        <p class="font-weight-bold">Humidity: <span id="humidityForecast" class="font-weight-normal"></span></p>
+                        </div>
+                    </div>
+                      <!-- Forecast 3 -->
+                      <div class="col-20">
+                        <div class="forecast-container bg-primary text-white mb-4">
+                        <h5 class="date-title font-weight-bold"></h5>
+                        <img id="forecastIcon" alt="Weather Forecast Icon">
+                        <p class="font-weight-bold">Temperature: <span id="tempForecast" class="font-weight-normal"></span></p>
+                        <p class="font-weight-bold">Humidity: <span id="humidityForecast" class="font-weight-normal"></span></p>
+                        </div>
+                    </div>
+                      <!-- Forecast 4 -->
+                      <div class="col-20">
+                        <div class="forecast-container bg-primary text-white mb-4">
+                        <h5 class="date-title font-weight-bold"></h5>
+                        <img id="forecastIcon" alt="Weather Forecast Icon">
+                        <p class="font-weight-bold">Temperature: <span id="tempForecast" class="font-weight-normal"></span></p>
+                        <p class="font-weight-bold">Humidity: <span id="humidityForecast" class="font-weight-normal"></span></p>
+                        </div>
+                    </div>
+                      <!-- Forecast 5 -->
+                      <div class="col-20">
+                        <div class="forecast-container bg-primary text-white mb-4">
+                        <h5 class="date-title font-weight-bold"></h5>
+                        <img id="forecastIcon" alt="Weather Forecast Icon">
+                        <p class="font-weight-bold">Temperature: <span id="tempForecast" class="font-weight-normal"></span></p>
+                        <p class="font-weight-bold">Humidity: <span id="humidityForecast" class="font-weight-normal"></span></p>
+                        </div>
+                    </div>
+                    </section>
+                </div>
+            </content>
         </div>
-    </div>
-</body>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="./assets/js/weatherApp.js"></script>
+
+
+  </body>
 </html>
