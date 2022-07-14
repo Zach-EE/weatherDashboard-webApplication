@@ -15,6 +15,7 @@
 * Enter a city and press the search button to search
 * City weather data will populate the weather dashboard
 * Forecast data will populate in forecast below current weatherEl
+* 
 
 
 
