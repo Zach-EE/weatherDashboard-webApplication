@@ -19,6 +19,6 @@
 
 
 ## Contact
-email: 
+email: zachholloway.n@gmail.com
 github: Zach-EE
 
